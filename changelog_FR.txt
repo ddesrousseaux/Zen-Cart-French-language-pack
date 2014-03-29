@@ -1,0 +1,18 @@
+25/05/10 : Correction d'erreur de traduction FR dans le programme d'installation se trouvant dans zc_install/. Merci à gob33 pour cette contribution.
+
+20/05/10 : Traduction de la version 1.3.9c
+
+20/04/10 : - Traduction de la version 1.3.9a (repercussion de toutes les modifications sur les fichiers de langue depuis la 1.3.8)
+                 - suppression du fichier mysql_zencart.sql du pack langue, les table de configuration ne sont plus traduites pour eviter de toucher au noyau de ZC
+
+02/01/10 : Modification de la ligne 296 du fichier \includes\languages\french.php (remplacement de 'Agrandir l\'image' par 'Agrandir l&rsquo;image')
+
+01/04/08 : ajout du répertoire /email/fr pour corriger un problème d'envoi des emails au format HTML en français.
+
+01/04/08 : correction d'un bug pour l'affichage des images de produits sur les fiches produits de la boutique. Fichier modifié : /includes/templates/template_default/templates/tpl_modules_main_product_image.php
+
+13/03/08 : ajout de la liste des fichiers a modifier après l'install dans le readme
+
+13/03/08 : réalisation de la traduction manquante du fichier paypalwpp.php
+
+12/03/08 : ajout des boutons francais dans le template_default

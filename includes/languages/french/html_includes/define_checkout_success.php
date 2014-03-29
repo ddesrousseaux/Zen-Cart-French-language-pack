@@ -1,0 +1,2 @@
+<p><strong>Exemple de texte apres une commande effectu&eacute;e ...</strong></p><p>Mettez quelques mots sur vos d&eacute;lais de livraison ou de traitement de commandes pour informer et rassurer le client, etc.</p>
+<p>Ce texte peut etre d&eacute;fini a partir de l'editeur de pages dans le menu Outils de l'administration.</p>
