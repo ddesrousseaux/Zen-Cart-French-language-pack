@@ -13,24 +13,24 @@ $relPath = (file_exists('includes/templates/template_default/images/logo.gif')) 
 $instPath = (file_exists('zc_install/index.php')) ? 'zc_install/index.php' : (file_exists('../zc_install/index.php') ? '../zc_install/index.php' : '');
 $docsPath = (file_exists('docs/index.html')) ? 'docs/index.html' : (file_exists('../docs/index.html') ? '../docs/index.html' : '');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" dir="ltr" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" dir="ltr" lang="en"> <!--<![endif]-->
 <head>
-<title>Vous devez installer Zen Cart</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta http-equiv="imagetoolbar" content="no" />
-<meta name="authors" content="The Zen Cart&trade; Team and others" />
-<meta name="generator" content="shopping cart program by Zen Cart&trade;, http://www.zen-cart.com" />
-<meta name="robots" content="noindex, nofollow" />
-<style type="text/css">
-<!--
-.systemError {color: #FFFFFF}
--->
-</style>
-
-
+  <meta charset="utf-8">
+  <title>Vous devez installer Zen Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta name="author" content="The Zen Cart&reg; Team and others">
+  <meta name="generator" content="shopping cart program by Zen Cart(R), http://www.zen-cart.com eCommerce software">
+  <meta name="robots" content="noindex, nofollow">
+  <style type="text/css">
+  <!--
+  .systemError {color: red; font-weight: bold;}
+  -->
+  </style>
 </head>
 
 <body style="margin: 20px">
