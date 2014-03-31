@@ -13,6 +13,7 @@
 
 define('NAVBAR_TITLE', 'Plan du Site');
 define('HEADING_TITLE', 'Plan du Site');
+define('TEXT_INFORMATION','');
 
 define('PAGE_ACCOUNT', 'Mon Compte');
 define('PAGE_ACCOUNT_EDIT', 'Informations de compte');

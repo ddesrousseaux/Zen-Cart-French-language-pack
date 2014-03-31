@@ -1,7 +1,7 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2009 Zen Cart Development Team
+ * @copyright Copyright 2003-2013 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: popup_coupon_help.php 14141 2009-08-10 19:34:47Z wilt $
@@ -30,6 +30,7 @@ define('TEXT_DENY', 'Refus&eacute;');
 define('TEXT_ALLOWED', ' (Autoris&eacute;)');
 define('TEXT_DENIED', ' (Refus&eacute;)');
 
+define('TEXT_NO_CAT_TOP_ONLY_DENY', '<p>Ce coupon a des restrictions sur certains produits.');
 define('TEXT_NO_CAT_RESTRICTIONS', '<p>Ce coupon est valide pour toutes les cat&eacute;gories.</p>');
 define('TEXT_NO_PROD_RESTRICTIONS', '<p>Ce coupon est valide pour tous les produits.</p>');
 

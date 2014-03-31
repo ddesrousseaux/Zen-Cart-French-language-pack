@@ -16,6 +16,7 @@ define('HEADER_TITLE_TOP', 'Top');
 define('HEADER_TITLE_CATALOG', 'Accueil');
 define('HEADER_TITLE_LOGOFF', 'Se d&eacute;connecter');
 define('HEADER_TITLE_LOGIN', 'Se connecter');
+define('HEADER_TITLE_ORDER_STATUS', 'Etat de la commande');
 
 // added defines for header alt and text
 define('HEADER_ALT_TEXT', 'Powered by Simagorad http://www.boutique-ecommerce.fr');

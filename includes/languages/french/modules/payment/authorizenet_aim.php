@@ -1,42 +1,19 @@
 <?php
-
-//
-// +----------------------------------------------------------------------+
-// |zen-cart Open Source E-commerce                                       |
-// +----------------------------------------------------------------------+
-// | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
-// | Portions Copyright (c) 2003 osCommerce                               |
-// +----------------------------------------------------------------------+
-// | This source file is subject to version 2.0 of the GPL license,       |
-// | that is bundled with this package in the file LICENSE, and is        |
-// | available through the world-wide-web at the following url:           |
-// | http://www.zen-cart.com/license/2_0.txt.                             |
-// | If you did not receive a copy of the zen-cart license and are unable |
-// | to obtain it through the world-wide-web, please send a note to       |
-// | license@zen-cart.com so we can mail you a copy immediately.          |
-// +----------------------------------------------------------------------+
-// | Authorize.net AIM Payment Module V.1.0                               |
-// | includes/languages/modules/payment/authorizenet_aim.php              |
-// | Module created by Eric Stamper - 01/30/2004                          |
-// | Released under GPL                                                   |
-// +----------------------------------------------------------------------+
-// $Id: authorizenet_aim.php 277 2004-09-10 23:03:52Z wilt $
-// +----------------------------------------------------------------------+
-// | Traduction française de Zen Cart 1.3.9 par Zen Cart France.                  |
-// | Auteur : Damien Desrousseaux : http://www.zencart-france.com             |
-// | Package : zen-cart-v1.3.9-FR                                        |
-// +----------------------------------------------------------------------+
-//
+/**
+ * Authorize.net AIM Payment Module Language definitions
+ *
+ * @package languageDefines
+ * @copyright Copyright 2003-2013 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: authorizenet_aim.php 18695 2011-05-04 05:24:19Z drbyte $
+ */
 
 
 // Admin Configuration Items
-
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_TEXT_ADMIN_TITLE', 'Authorize.net (AIM)'); // Payment option title as displayed in the admin
-  
-    if (MODULE_PAYMENT_AUTHORIZENET_AIM_STATUS == 'True') {
+
+  if (MODULE_PAYMENT_AUTHORIZENET_AIM_STATUS == 'True') {
     define('MODULE_PAYMENT_AUTHORIZENET_AIM_TEXT_DESCRIPTION', '<a target="_blank" href="https://account.authorize.net/">Authorize.net Merchant Login</a>' . (MODULE_PAYMENT_AUTHORIZENET_AIM_TESTMODE != 'Production' ? '<br /><br />Testing Info:<br /><b>Automatic Approval Credit Card Numbers:</b><br />Visa#: 4007000000027<br />MC#: 5424000000000015<br />Discover#: 6011000000000012<br />AMEX#: 370000000000002<br /><br /><b>Note:</b> These credit card numbers will return a decline in live mode, and an approval in test mode.  Any future date can be used for the expiration date and any 3 or 4 (AMEX) digit number can be used for the CVV Code.<br /><br /><b>Automatic Decline Credit Card Number:</b><br /><br />Card #: 4222222222222<br /><br />This card number can be used to receive decline notices for testing purposes.<br /><br />' : ''));
   } else { 
  define('MODULE_PAYMENT_AUTHORIZENET_AIM_TEXT_DESCRIPTION', '<a target="_blank" href="http://reseller.authorize.net/application.asp?id=131345">Click Here to Sign Up for an Account</a><br /><br /><a target="_blank" href="https://account.authorize.net/">Authorize.net Merchant Area</a><br /><br /><strong>Requirements:</strong><br /><hr />*<strong>Authorize.net Account</strong> (see link above to signup)<br />*<strong>CURL is required </strong>and MUST be compiled with SSL support into PHP by your hosting company<br />*<strong>Authorize.net username and transaction key</strong> available from your Merchant Area');
@@ -57,6 +34,8 @@
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_TEXT_JS_CC_CVV', '* Les 3 ou 4 derniers chiffres du num&eacute;ro de V&eacute;rification qui figurent g&eacute;n&eacute;ralement au dos de la Carte de Cr&eacute;dit.\n');
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_TEXT_DECLINED_MESSAGE', 'Votre Carte de Cr&eacute;dit a &eacute;t&eacute; refus&eacute;e. Veuillez essayer une autre Carte ou nous contacter pour plus d\'Information.');
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_TEXT_ERROR', 'Erreur de Carte de Cr&eacute;dit !');
+  define('MODULE_PAYMENT_AUTHORIZENET_AIM_TEXT_AUTHENTICITY_WARNING', 'ATTENTION: Probleme de s&eacute;curit&eacute;. Veuillez contactez le propri&eacute;taire de la boutique. Votre commande n\'a pas &eacute;t&eacute; autoris&eacute;e.');
+
   
 // admin tools:
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_ENTRY_REFUND_BUTTON_TEXT', 'Do Refund');
@@ -94,10 +73,9 @@
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_ENTRY_CAPTURE_SUFFIX', 'Captures must be performed within 30 days of the original authorization. You may only capture an order ONCE. <br />Please be sure the amount specified is correct.<br />If you leave the amount blank, the original amount will be used instead.');
 
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_ENTRY_VOID_TITLE', '<strong>Voiding Transactions</strong>');
-  define('MODULE_PAYMENT_AUTHORIZENET_AIM_ENTRY_VOID', 'You may void a transaction which has not yet been settled:');
+  define('MODULE_PAYMENT_AUTHORIZENET_AIM_ENTRY_VOID', 'You may void a transaction which has not yet been settled, or an authorization which has not been captured.<br />Enter the unsettled Trans ID or the uncaptured Auth ID:');
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_TEXT_VOID_CONFIRM_CHECK', 'Check this box to confirm your intent:');
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_ENTRY_VOID_TEXT_COMMENTS', 'Notes (will show on Order History):');
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_ENTRY_VOID_DEFAULT_MESSAGE', 'Transaction Cancelled');
   define('MODULE_PAYMENT_AUTHORIZENET_AIM_ENTRY_VOID_SUFFIX', 'Voids must be completed before the original transaction is settled in the daily batch.');
-  
-?>
+

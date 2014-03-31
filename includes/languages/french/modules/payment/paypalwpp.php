@@ -1,7 +1,7 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2007 Zen Cart Development Team
+ * @copyright Copyright 2003-2012 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: paypalwpp.php 6528 2007-06-25 23:25:27Z drbyte $
@@ -30,6 +30,7 @@
   define('MODULE_PAYMENT_PAYPALWPP_TEXT_EC_HEADER', 'Commande rapide et s&eacute;curis&eacute;e avec PayPal:');
   define('MODULE_PAYMENT_PAYPALWPP_EC_TEXT_TYPE', 'Proc&eacute;dure Rapide PayPal');
   define('MODULE_PAYMENT_PAYPALWPP_DP_TEXT_TYPE', 'Paiement Direct PayPal');
+  define('MODULE_PAYMENT_PAYPALWPP_PF_TEXT_TYPE', 'Carte bancaire');  //(used for payflow transactions)
   define('MODULE_PAYMENT_PAYPALWPP_ERROR_HEADING', 'Nous sommes d&eacute;sol&eacute;, votre carte bancaire n\'a pas pu &ecirc;tre utilis&eacute;e.');
   define('MODULE_PAYMENT_PAYPALWPP_TEXT_CARD_ERROR', 'Les informations concernant votre carte bancaire contiennent une erreur. Merci de r&eacute;essayer apr&egrave;s v&eacute;rification.');
   define('MODULE_PAYMENT_PAYPALWPP_TEXT_CREDIT_CARD_FIRSTNAME', 'Pr&eacute;nom :');
@@ -44,8 +45,11 @@
   define('MODULE_PAYMENT_PAYPALWPP_TEXT_DECLINED', 'Votre carte bancaire a &eacute;t&eacute; refus&eacute;e. Merci d\'essayer avec une autre carte ou de contacter votre banque pour plus d\'information.');
   define('MODULE_PAYMENT_PAYPALWPP_INVALID_RESPONSE', 'Nous n\'avons pas pu traiter votre commande. Merci de r&eacute;essayer, de s&eacute;lectionner un autre mode de paiement, ou contactez-nous pour de l\'aide.');
   define('MODULE_PAYMENT_PAYPALWPP_TEXT_GEN_ERROR', 'Une erreur s\'est produite lors du contact avec le processus de traitement des paiements. Merci de r&eacute;essayer, de s&eacute;lectionner un autre mode de paiement, ou contacter-nous pour de l\'aide.');
-  define('MODULE_PAYMENT_PAYPALWPP_TEXT_ADDR_ERROR', 'L\'adresse que vous avez indiqu&eacute;e ne semble pas &ecirc;tre valide ou n\'a pu &ecirc;tre confondue. Merci de s&eacute;lectionner ou d\'ajouter une adresse diff&eacute;rente et de r&eacute;essayer.');
-  define('MODULE_PAYMENT_PAYPALWPP_TEXT_CONFIRMEDADDR_ERROR', 'The address you selected at PayPal is not a Confirmed address. Please return to PayPal and select or add a confirmed address and try again.');
+  define('MODULE_PAYMENT_PAYPALWPP_TEXT_EMAIL_ERROR_MESSAGE', 'Cher marchand,' . "\n" . 'Il s\'est produit une erreur en essayant de d&eacute;marrer la transaction de paiement express par PayPal. Seul le "num&eacute;ro" de l\'erreur a &eacute;t&eacute; affich&eacute; au client.  Les details de cette erreur se trouvent ci-dessous.' . "\n\n");
+  define('MODULE_PAYMENT_PAYPALWPP_TEXT_EMAIL_ERROR_SUBJECT', 'ALERTE: Erreur de paiement express par PayPal');
+  define('MODULE_PAYMENT_PAYPALWPP_TEXT_ADDR_ERROR', 'L\'adresse que vous avez indiqu&eacute;e ne semble pas &ecirc;tre valide ou n\'a pu &ecirc;tre confondue. Merci de s&eacute;lectionner ou d\'ajouter une adresse diff&eacute;rente et de r&eacute;essayer.')
+  define('MODULE_PAYMENT_PAYPALWPP_TEXT_CONFIRMEDADDR_ERROR', 'L\'adresse que vous avez s&eacute;l&eacute;ctionn&eacute; dans PayPal n\'est pas une adresse confirm&eacute;e. Veuillez retourner sur Paypal puis s&eacute;lectionner ou ajouter une adresse confirm&eacute;e, et r&eacute;essayer.');
+  define('MODULE_PAYMENT_PAYPALWPP_TEXT_INSUFFICIENT_FUNDS_ERROR', 'PayPal n\'a pas pu financer cette transaction. Veuillez s&eacute;lectionner un autre mode de paiement ou revoir les options de paiement de votre compte PayPal avant de continuer.');
   define('MODULE_PAYMENT_PAYPALWPP_TEXT_ERROR', 'Une erreur s\'est produite lors du traitement de votre carte de cr&eacute;dit. Merci de r&eacute;essayer, de s&eacute;lectionner un autre mode de paiement, ou contacter-nous pour de l\'aide.');
   define('MODULE_PAYMENT_PAYPALWPP_TEXT_BAD_CARD', 'Nous nous excusons pour la g&ecirc;ne occasionn&eacute;e, mais la carte de cr&eacute;dit que vous voulez utiliser n\'est pas du type que nous acceptons. Merci d\'utiliser une autre carte de cr&eacute;dit.');
   define('MODULE_PAYMENT_PAYPALWPP_TEXT_BAD_LOGIN', 'Un probl&eacute;me est apparu lors de la validation de votre compte. Merci de r&eacute;essayer.');
@@ -95,17 +99,20 @@
   define('MODULE_PAYMENT_PAYPALWPP_EC_BUTTON_SM_IMG', 'https://www.paypal.com/fr_FR/i/btn/btn_xpressCheckoutsm.gif');
   define('MODULE_PAYMENT_PAYPALWPP_MARK_BUTTON_IMG', 'https://www.paypal.com/fr_FR/i/logo/PayPal_mark_37x23.gif');
   //define('MODULE_PAYMENT_PAYPALEC_MARK_BUTTON_IMG', 'https://www.paypalobjects.com/en_US/i/logo/PayPal_mark_37x23.gif');
-  define('MODULE_PAYMENT_PAYPALEC_MARK_BUTTON_IMG', 'https://www.paypalobjects.com/fr_FR/i/logo/PayPal_mark_50x34.gif');
+  define('MODULE_PAYMENT_PAYPALEC_MARK_BUTTON_IMG', 'https://www.paypalobjects.com/en_US/i/logo/PayPal_mark_50x34.gif');
   //define('MODULE_PAYMENT_PAYPALEC_MARK_BUTTON_IMG', 'https://www.paypalobjects.com/en_US/i/bnr/horizontal_solution_PP.gif');
   //define('MODULE_PAYMENT_PAYPALEC_MARK_BUTTON_IMG', 'https://www.paypalobjects.com/en_US/i/bnr/horizontal_solution_PPeCheck.gif');
 
-
 ////////////////////////////////////////
-// Styling of the PayPal Payment Page. Uncomment to customize.  Otherwise, simply create a Custom Page Style at PayPal and mark it as Primary or name it in your Zen Cart PayPal WPP settings.
+// Styling of the PayPal Payment Page. Uncomment to customize.
+// A BETTER WAY, HOWEVER, is to simply create a Custom Page Style at PayPal and mark it as Primary or name it in your Zen Cart PayPal EC settings.
   //define('MODULE_PAYMENT_PAYPALWPP_HEADER_IMAGE', '');  // this should be an HTTPS URL to the image file
   //define('MODULE_PAYMENT_PAYPALWPP_PAGECOLOR', '');  // 6-digit hex value
   //define('MODULE_PAYMENT_PAYPALWPP_HEADER_BORDER_COLOR', '');  // 6-digit hex value
   //define('MODULE_PAYMENT_PAYPALWPP_HEADER_BACK_COLOR', ''); // 6-digit hex value
+ ////// Styling of pseudo cart contents display section
+  //define('MODULE_PAYMENT_PAYPAL_LOGO_IMAGE', ''); // https path to your customized logo
+  //define('MODULE_PAYMENT_PAYPAL_CART_BORDER_COLOR', ''); // 6-digit hex value
 ////////////////////////////////////////
 
 
@@ -141,6 +148,8 @@
   define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_FULL', 'Si vous souhaitez rembourser ce paiement enti&egrave;rement, cliquez ici:');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_BUTTON_TEXT_FULL', 'Rembourser totalement');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_BUTTON_TEXT_PARTIAL', 'Rembourser Partiellement');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TEXT_FULL_OR', '<br />... ou entrer le partiel ');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_PAYFLOW_TEXT', 'Entrer le ');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_PARTIAL_TEXT', '<br />... ou entrez le montant du remboursement partiel ici et cliquez sur Rembourser Partiellement');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_SUFFIX', '*Un remboursement complet ne doit pas &ecirc;tre effectu&eacute; apr&egrave;s un remboursement partiel.<br />*Plusieurs remboursements partiels sont autoris&eacute;s jusqu\'&agrave; hauteur du solde restant.');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TEXT_COMMENTS', '<strong>Remarque &agrave; afficher au client:</strong>');
@@ -171,6 +180,12 @@
   define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_BUTTON_TEXT_FULL', 'Annuler');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_SUFFIX', '');
 
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_TRANSSTATE', 'Trans. State:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTHCODE', 'Auth. Code:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AVSADDR', 'AVS Address match:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AVSZIP', 'AVS ZIP match:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CVV2MATCH', 'CVV2 match:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_DAYSTOSETTLE', 'Days to Settle:');
 
 
 // this text is used to announce the username/password when the module creates the customer account and emails data to them:
@@ -184,3 +199,6 @@
 
   define('MODULE_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_SUBJECT', 'Etat des paiements en fraude: ');
   define('MODULE_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_INTRO', 'Ceci est une notification automatique pour vous pr&eacute;venir que PayPal a marqu&eacute; le paiement pour une nouvelle commande en Paiement Requis, apr&egrave;s v&eacute;rification par leur &eacute;quipe anti-fraude. En g&eacute;n&eacute;ral, la v&eacute;rification est termin&eacute;e dans les 36 heures. Il est FORTEMENT CONSEILLE de NE PAS ENVOYER la commande tant que la v&eacute;rification de paiement n\'est pas termin&eacute;e. Vous pouvez voir le dernier etat de v&eacute;rification de la commande en vous identifiant sur votre compte PayPal et en v&eacute;rifiant les transactions r&eacute;centes.');
+  define('MODULES_PAYMENT_PAYPALWPP_TEXT_BLANK_ADDRESS', 'PROBLEME: Nous sommes d&eacute;sol&eacute;. PayPal a renvoy&eacute; une adresse vide. <br />Afin de pouvoir terminer vos achats, veuillez fournir une adresse en cliquant sur le bouton &quot;Cr&eacute;er un compte&quot; ci-dessous pour cr&eacute;er un compte sur notre boutique. Ensuite vous pourrez s&eacute;lectionner PayPal de nouveau pour continuer votre commande. Nous nous excusions pour la gene occasionn&eacute;ee. Si vous avez quelque probl&egrave;me que ce soit avec la commande, veuillez cliquer sur le lien Nous Contacter et nous expliquer ce qui vous pose probl&egrave;me pour que nous puissions vous aider. Merci.');
+
+  define('MODULES_PAYMENT_PAYPALWPP_AGGREGATE_CART_CONTENTS', 'Tous les produits de votre panier d\'achat (voir les details dans la boutique et sur votre re&ccedil;u).');

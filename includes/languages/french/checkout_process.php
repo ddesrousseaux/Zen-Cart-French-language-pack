@@ -32,8 +32,17 @@
   define('EMAIL_THANKS_FOR_SHOPPING','Nous vous remercions de votre confiance !');
   define('EMAIL_DETAILS_FOLLOW','Voici les d&eacute;tails de votre commande.');
   define('EMAIL_TEXT_ORDER_NUMBER', 'Num&eacute;ro de commande :');
-  define('EMAIL_TEXT_INVOICE_URL', 'Facture d&eacute;taill&eacute;e :');
-  define('EMAIL_TEXT_INVOICE_URL_CLICK', 'Cliquez ici pour une Facture d&eacute;taill&eacute;e');
+//IF COWOA ACCOUNT CHANGE TO ORDER STATUS
+if($_SESSION['COWOA']) $COWOA=TRUE;
+if($COWOA)
+define('EMAIL_TEXT_INVOICE_URL', 'V&eacute;rifier l\'&eacute;tat de la commande:');
+else
+define('EMAIL_TEXT_INVOICE_URL', 'Facture d&eacute;taill&eacute;e :');
+if($COWOA)
+define('EMAIL_TEXT_INVOICE_URL_CLICK', 'Cliquez ici pour v&eacute;rifier l\&eacute;tat de votre commande');
+else
+define('EMAIL_TEXT_INVOICE_URL_CLICK', 'Cliquez ici pour une Facture d&eacute;taill&eacute;e');
+// END IF COWOA ACCOUNT
   define('EMAIL_TEXT_DATE_ORDERED', 'Date de commande :');
   define('EMAIL_TEXT_PRODUCTS', 'Produits');
   define('EMAIL_TEXT_SUBTOTAL', 'Sous-Total :');
@@ -50,4 +59,4 @@
   define('EMAIL_ORDER_NUMBER_SUBJECT', ' #');
   define('HEADING_ADDRESS_INFORMATION','Information adresse');
   define('HEADING_SHIPPING_METHOD','Mode de livraison');
-?>
+// eof

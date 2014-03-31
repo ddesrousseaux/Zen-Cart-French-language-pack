@@ -1,7 +1,7 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2006 Zen Cart Development Team
+ * @copyright Copyright 2003-2009 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: login.php 5458 2006-12-29 22:00:08Z drbyte $
@@ -23,6 +23,8 @@
 
   define('HEADING_RETURNING_CUSTOMER', 'Je suis d&eacute;j&agrave; client');
   define('HEADING_RETURNING_CUSTOMER_SPLIT', 'Client existant');
+  define('TEXT_RATHER_COWOA', 'Pour une exp&eacute;rience de commande plus rapide, nous offrons la possibilit&eacute; de commander sans cr&eacute;er de compte.<br />');
+  define('COWOA_HEADING', 'Commander sans Compte');
   define('TEXT_RETURNING_CUSTOMER_SPLIT', 'Pour continuer, veuillez vous identifier &agrave; votre compte <strong>' . STORE_NAME . '</strong>.');
 
   define('TEXT_PASSWORD_FORGOTTEN', 'Vous avez perdu votre mot de passe ?');

@@ -1,35 +1,21 @@
 <?php
-//
-// +----------------------------------------------------------------------+
-// |zen-cart Open Source E-commerce                                       |
-// +----------------------------------------------------------------------+
-// | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
-// | Portions Copyright (c) 2003 osCommerce                               |
-// +----------------------------------------------------------------------+
-// | This source file is subject to version 2.0 of the GPL license,       |
-// | that is bundled with this package in the file LICENSE, and is        |
-// | available through the world-wide-web at the following url:           |
-// | http://www.zen-cart.com/license/2_0.txt.                             |
-// | If you did not receive a copy of the zen-cart license and are unable |
-// | to obtain it through the world-wide-web, please send a note to       |
-// | license@zen-cart.com so we can mail you a copy immediately.          |
-// +----------------------------------------------------------------------+
-// $Id: checkout_confirmation.php 290 2004-09-15 19:48:26Z wilt $
-// +----------------------------------------------------------------------+
-// | Traduction française de Zen Cart 1.3.9 par Zen Cart France.                  |
-// | Auteur : Damien Desrousseaux : http://www.zencart-france.com             |
-// | Package : zen-cart-v1.3.9-FR                                        |
-// +----------------------------------------------------------------------+
-//
+/**
+ * @package languageDefines
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: checkout_confirmation.php 4067 2006-08-06 07:26:21Z drbyte $
+ * @version $Id: Integrated COWOA v2.2 - 2007 - 2012
+ */
+if($_SESSION['COWOA']) $COWOA=TRUE;
 
+define('NAVBAR_TITLE_1', 'Checkout');
+define('NAVBAR_TITLE_2', 'Confirmation');
 
-  define('NAVBAR_TITLE_1', 'Commander');
-  define('NAVBAR_TITLE_2', 'Confirmation');
-
-  define('HEADING_TITLE', 'Etape 3 sur 3 - Confirmation de la Commande');
+if($COWOA)
+define('HEADING_TITLE', 'Etape 4 sur 5 - Confirmation de commande');
+else
+define('HEADING_TITLE', 'Etape 3 sur 3 - Confirmation de commande');
 
   define('HEADING_BILLING_ADDRESS', 'Coordonn&eacute;es de facturation');
   define('HEADING_DELIVERY_ADDRESS', 'Adresse de livraison');
@@ -41,7 +27,6 @@
 // no comments entered
   define('NO_COMMENTS_TEXT', 'Aucun');
   define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Derni&egrave;re Etape</strong>');
-  define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- continuer pour confirmer votre commande. Merci !');
+  define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- continuer pour confirmer votre commande. Merci !');  define('OUT_OF_STOCK_CAN_CHECKOUT', 'Les produits identifi&eacute;s par ' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . ' sont hors stock<br />Des articles pas en stock seront plac&eacute;s sur la commande en attente.');
   define('OUT_OF_STOCK_CAN_CHECKOUT', 'Les produits identifi&eacute;s par ' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . ' sont hors stock<br />Des articles pas en stock seront plac&eacute;s sur la commande en attente.');
 
-?>

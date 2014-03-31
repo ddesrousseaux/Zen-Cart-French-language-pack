@@ -1,7 +1,7 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2006 Zen Cart Development Team
+ * @copyright Copyright 2003-2012 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: create_account.php 3027 2006-02-13 17:15:51Z drbyte $
@@ -18,6 +18,8 @@
 
   define('TEXT_ORIGIN_LOGIN', '<strong class="note">NOTE :</strong> si vous avez d&eacute;j&agrave; un compte, veuillez vous identifier sur la <a href="%s">page de Connexion</a>.');
 
+  define('ERROR_CREATE_ACCOUNT_SPAM_DETECTED', 'Merci, votre demande de compte a &eacute;t&eacute; envoy&eacute;e et soumise &grave; validation.');
+  
 // greeting salutation
   define('EMAIL_SUBJECT', 'Bienvenue chez ' . STORE_NAME);
   define('EMAIL_GREET_MR', 'Cher Mr. %s,' . "\n\n");

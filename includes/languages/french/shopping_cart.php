@@ -1,7 +1,7 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2006 Zen Cart Development Team
+ * @copyright Copyright 2003-2013 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: shopping_cart.php 3183 2006-03-14 07:58:59Z birdbrain $
@@ -11,10 +11,11 @@
  * Package : zen-cart-v1.3.9-FR
  */
 
+ define('TEXT_INFORMATION', 'Vous pouvez continuer votre achat en cliquant sur le bouton Commande ci-dessous. La livraison, les taxes et remises seront g&eacute;r&eacute;es dans les pages suivantes.');
+
 define('NAVBAR_TITLE', 'Panier');
 define('HEADING_TITLE', 'Le contenu de votre panier');
 define('HEADING_TITLE_EMPTY', 'Votre panier');
-define('TEXT_INFORMATION', '');
 define('TABLE_HEADING_REMOVE', 'Suppr');
 define('TABLE_HEADING_QUANTITY', 'Qt&eacute;.');
 define('TABLE_HEADING_MODEL', 'Mod&egrave;le');
@@ -32,4 +33,3 @@ define('TEXT_TOTAL_AMOUNT', '&nbsp;&nbsp;Montant: ');
 
 define('TEXT_VISITORS_CART', '<a href="javascript:session_win();">[Aide (?)]</a>');
 define('TEXT_OPTION_DIVIDER', '&nbsp;-&nbsp;');
-?>

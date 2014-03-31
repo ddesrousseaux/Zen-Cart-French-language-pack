@@ -1,30 +1,11 @@
 <?php
-//
-// +----------------------------------------------------------------------+
-// |zen-cart Open Source E-commerce                                       |
-// +----------------------------------------------------------------------+
-// | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |
-// | http://www.zen-cart.com/index.php                                    |
-// |                                                                      |
-// | Portions Copyright (c) 2003 osCommerce                               |
-// +----------------------------------------------------------------------+
-// | This source file is subject to version 2.0 of the GPL license,       |
-// | that is bundled with this package in the file LICENSE, and is        |
-// | available through the world-wide-web at the following url:           |
-// | http://www.zen-cart.com/license/2_0.txt.                             |
-// | If you did not receive a copy of the zen-cart license and are unable |
-// | to obtain it through the world-wide-web, please send a note to       |
-// | license@zen-cart.com so we can mail you a copy immediately.          |
-// +----------------------------------------------------------------------+
-// $Id: icon_names.php 290 2004-09-15 19:48:26Z wilt $
-// +----------------------------------------------------------------------+
-// | Traduction française de Zen Cart 1.3.9 par Zen Cart France.                  |
-// | Auteur : Damien Desrousseaux : http://www.zencart-france.com             |
-// | Package : zen-cart-v1.3.9-FR                                        |
-// +----------------------------------------------------------------------+
-//
-
+/**
+ * @package languageDefines
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: icon_names.php 4224 2006-08-24 01:41:50Z drbyte $
+ */
 
 // define the icon images used in the project
   
@@ -37,8 +18,6 @@ define('ICON_IMAGE_TINYCART', 'cart.gif');
 
 //alt tags for buttons
 
-  //define('ICON_ARROW_RIGHT_ALT', 'plus');
-  //define('ICON_CART_ALT', 'Dans le Panier');
   define('ICON_ERROR_ALT', 'Erreur');
   define('ICON_SUCCESS_ALT', 'Succ&egrave;s');
   define('ICON_WARNING_ALT', 'Attention');

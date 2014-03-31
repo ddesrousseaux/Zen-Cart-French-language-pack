@@ -1,7 +1,8 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2007 Zen Cart Development Team
+ * @copyright Copyright 2003-2013 Zen Cart Development Team
+ * @copyright Portions Copyright 2005 CardinalCommerce
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: paypaldp.php 7334 2007-10-31 11:58:58Z drbyte $
@@ -12,6 +13,7 @@
  */
 
   define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_WPP', 'Paiement Paypal sur site marchand Pro');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_NONUSA', 'PayPal Website Payments Pro');
   define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_PRO20', 'Paiements sur site marchand Pro Edition (FR)');
 
   if (IS_ADMIN_FLAG === true) {
@@ -162,15 +164,16 @@
   define('MODULE_PAYMENT_PAYPAL_ENTRY_CVV2MATCH', 'CVV2 match:');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_DAYSTOSETTLE', 'Days to Settle:');
 
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_ONETIME_CHARGES_PREFIX', 'Taxes One-Time en relation avec ');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_SURCHARGES_SHORT', 'Surtaxes');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_SURCHARGES_LONG', 'G&egrave;re les charges et autres taxes applicables');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_DISCOUNTS_SHORT', 'Remises');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_DISCOUNTS_LONG', 'Cr&eacute;dits appliqu&eacute;s, incluant les codes de r&eacute;ductions, ch&egrave;ques cadeau, etc');
 
-  define('MODULES_PAYMENT_PAYPALDP_LINEITEM_TEXT_ONETIME_CHARGES_PREFIX', 'Taxes One-Time en relation avec ');
-  define('MODULES_PAYMENT_PAYPALDP_LINEITEM_TEXT_SURCHARGES_SHORT', 'Surtaxes');
-  define('MODULES_PAYMENT_PAYPALDP_LINEITEM_TEXT_SURCHARGES_LONG', 'G&egrave;re les charges et autres taxes applicables');
-  define('MODULES_PAYMENT_PAYPALDP_LINEITEM_TEXT_DISCOUNTS_SHORT', 'Remises');
-  define('MODULES_PAYMENT_PAYPALDP_LINEITEM_TEXT_DISCOUNTS_LONG', 'Cr&eacute;dits appliqu&eacute;s, incluant les codes de r&eacute;ductions, ch&egrave;ques cadeau, etc');
+  define('MODULES_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_SUBJECT', 'Avis de Paiement en fraude : ');
+  define('MODULES_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_INTRO', 'Ceci est une notification automatique pour vous prévenir que PayPal a marqu&eacute; le paiement pour v&eacute;rification par leur &eacute;quipe anti-fraude. Habituellement la v&eacute;rification prend moins de 36 heures. Il est FORTEMENT RECOMMANDE de NE PAS ENVOYER la commande tant que la v&eacute;rification du paiement n\'est pas termin&eacute;e. Vous pouvez acc&eacute;der au dernier &eacute;tat de la commande en vous identifiant sur votre compte PayPal et en regardant les derni&egrave;res transactions.');
 
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_SUBJECT', 'Etat des paiements en fraude: ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_INTRO', 'Ceci est une notification automatique pour vous pr&eacute;venir que PayPal a marqu&eacute; le paiement pour une nouvelle commande en Paiement Requis, apr&egrave;s v&eacute;rification par leur &eacute;quipe anti-fraude. En g&eacute;n&eacute;ral, la v&eacute;rification est termin&eacute;e dans les 36 heures. Il est FORTEMENT CONSEILLE de NE PAS ENVOYER la commande tant que la v&eacute;rification de paiement n\'est pas termin&eacute;e. Vous pouvez voir le dernier etat de v&eacute;rification de la commande en vous identifiant sur votre compte PayPal et en v&eacute;rifiant les transactions r&eacute;centes.');
+  define('MODULES_PAYMENT_PAYPALWPP_AGGREGATE_CART_CONTENTS', 'Tous les produits dans votre panier d\'achat (voir les d&eacute;tails dans la boutique et dans la facture).');
 
   define('CENTINEL_AUTHENTICATION_ERROR', 'Echec d\'Authentification  - Votre organisme financier a signal&eacute; qu\'il ne pouvait pas authentifier cette transaction correctement. Pour prot&eacute;get d\'une utilisation non autoris&ecute;e, cette carte ne peut pas &ecirc;tre utilis&eacute;e pour terminer votre commande. Vous pouver terminer votre commande en s&eacute;lectionnant un autre moyen de paiement.');
   define('CENTINEL_PROCESSING_ERROR', 'Il y a eu un probl&egrave;me pour obtenir l\'autorisation de votre transaction. Veuillez re-entrer vos informations de paiement, et/ou choisir un autre moyen de paiement.');

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2010 Zen Cart Development Team
+ * @copyright Copyright 2003-2013 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: french.php 4807 04-03-2008 04:10:20Z damien $
@@ -12,46 +12,7 @@
  * Package : zen-cart-v1.3.9-FR
  */
 
-// FOLLOWING WERE moved to meta_tags.php
-//define('TITLE', 'Zen Cart!');
-//define('SITE_TAGLINE', 'The Art of E-commerce');
-//define('CUSTOM_KEYWORDS', 'ecommerce, open source, shop, online shopping');
-// END: moved to meta_tags.php
-
-  define('FOOTER_TEXT_BODY', 'Copyright &copy; ' . date('Y') . ' <a href="' . zen_href_link(FILENAME_DEFAULT) . '" target="_blank">' . STORE_NAME . '</a>. Powered by <a href="http://www.zen-cart.com" target="_blank">Zen Cart</a>. Traduction par <a href="http://www.zencart-france.com" target="_blank">Zen Cart France</a>.');
-
-// look in your $PATH_LOCALE/locale directory for available locales..
-// on RedHat try 'en_US'
-// on FreeBSD try 'en_US.ISO_8859-1'
-// on Windows try 'en', or 'English'
-  @setlocale(LC_TIME, 'fr_FR.ISO_8859-1');
-  define('DATE_FORMAT_SHORT', '%d/%m/%Y');  // this is used for strftime()
-  define('DATE_FORMAT_LONG', '%A %d %B %Y'); // this is used for strftime()
-  define('DATE_FORMAT', 'd/m/Y'); // this is used for date()
-  define('DATE_TIME_FORMAT', 'd/m/Y H:i:s'); // this is used for date()
-
-////
-// Return date in raw format
-// $date should be in format mm/dd/yyyy
-// raw date is in format YYYYMMDD, or DDMMYYYY
-  if (!function_exists('zen_date_raw')) {
-    function zen_date_raw($date, $reverse = false) {
-      if ($reverse) {
-        return substr($date, 0, 2) . substr($date, 3, 2) . substr($date, 6, 4);
-      } else {
-        return substr($date, 6, 4) . substr($date, 3, 2) . substr($date, 0, 2);
-      }
-    }
-  }
-
-// if USE_DEFAULT_LANGUAGE_CURRENCY is true, use the following currency, instead of the applications default currency (used when changing language)
-  define('LANGUAGE_CURRENCY', 'EUR');
-
-// Global entries for the <html> tag
-  define('HTML_PARAMS','dir="ltr" lang="fr"');
-
-// charset for web pages and emails
-  define('CHARSET', 'iso-8859-1');
+  define('FOOTER_TEXT_BODY', 'Copyright &copy; ' . date('Y') . ' <a href="' . zen_href_link(FILENAME_DEFAULT) . '" target="_blank">' . STORE_NAME . '</a>. Powered by <a href="http://www.zen-cart.com" target="_blank">Zen Cart</a>');
 
 // footer text in includes/footer.php
   define('FOOTER_TEXT_REQUESTS_SINCE', 'requ&ecirc;tes depuis');
@@ -65,16 +26,13 @@
 
 // used for redeem code sidebox
   define('BOX_HEADING_GV_REDEEM', TEXT_GV_NAME);
-  define('BOX_GV_REDEEM_INFO', 'Code de r&eacute;duction : ');
+fgvc  define('BOX_GV_REDEEM_INFO', 'Code de r&eacute;duction : ');
 
 // text for gender
   define('MALE', 'Mr.');
   define('FEMALE', 'Mme.');
   define('MALE_ADDRESS', 'Mr.');
   define('FEMALE_ADDRESS', 'Mme.');
-
-// text for date of birth example
-  define('DOB_FORMAT_STRING', 'mm/dd/yyyy');
 
 //text for sidebox heading links
   define('BOX_HEADING_LINKS', '&nbsp;&nbsp;[plus]');
@@ -113,7 +71,9 @@
 // shopping_cart box text in sideboxes/shopping_cart.php
   define('BOX_HEADING_SHOPPING_CART', 'Mon panier');
   define('BOX_SHOPPING_CART_EMPTY', 'Votre panier est vide.');
-  define('BOX_SHOPPING_CART_DIVIDER', 'ea.-&nbsp;');
+  define('BOX_SHOPPING_CART_DIVIDER', '');
+  define('BOX_HEADING_SHOPPING_CART_TOTAL', 'total');
+
 
 // order_history box text in sideboxes/order_history.php
   define('BOX_HEADING_CUSTOMER_ORDERS', 'Re-Commande rapide');
@@ -123,12 +83,12 @@
   define('BOX_HEADING_BESTSELLERS_IN', 'Les meilleures ventes dans<br />&nbsp;&nbsp;');
 
 // notifications box text in sideboxes/products_notifications.php
-   define('BOX_HEADING_NOTIFICATIONS', 'Notifications');
+  define('BOX_HEADING_NOTIFICATIONS', 'Notifications');
   define('BOX_NOTIFICATIONS_NOTIFY', 'Me notifier des mises &agrave; jour de <strong>%s</strong>');
   define('BOX_NOTIFICATIONS_NOTIFY_REMOVE', 'Ne plus me notifier des mises &agrave; jour de <strong>%s</strong>');
 
 // manufacturer box text
-define('BOX_HEADING_MANUFACTURER_INFO', 'Infos Fabricant');
+  define('BOX_HEADING_MANUFACTURER_INFO', 'Infos Fabricant');
   define('BOX_MANUFACTURER_INFO_HOMEPAGE', 'Site de %s');
   define('BOX_MANUFACTURER_INFO_OTHER_PRODUCTS', 'Autres Produits');
 
@@ -154,17 +114,6 @@ define('BOX_HEADING_MANUFACTURER_INFO', 'Infos Fabricant');
   define('BOX_INFORMATION_PAGE_2', 'Page 2');
   define('BOX_INFORMATION_PAGE_3', 'Page 3');
   define('BOX_INFORMATION_PAGE_4', 'Page 4');
-
-// tell a friend box text in sideboxes/tell_a_friend.php
-    define('BOX_HEADING_TELL_A_FRIEND', 'Informer un Ami');
-  define('BOX_TELL_A_FRIEND_TEXT', 'Informer un ami de ce Produit.');
-
-// wishlist box text in includes/boxes/wishlist.php
-  define('BOX_HEADING_CUSTOMER_WISHLIST', 'Ma liste de souhaits');
-  define('BOX_WISHLIST_EMPTY', 'Vous n\'avez aucun Produit dans votre Liste de souhaits');
-  define('IMAGE_BUTTON_ADD_WISHLIST', 'ajouter &agrave; ma Liste de souhaits');
-  define('TEXT_WISHLIST_COUNT', 'Vous avez actuellement %s Produits dans votre Liste de souhaits.');
-  define('TEXT_DISPLAY_NUMBER_OF_WISHLIST', 'Affiche <strong>%d</strong> &agrave; <strong>%d</strong> (sur <strong>%d</strong> produits dans votre Wishlist)');
 
 //New billing address text
   define('SET_AS_PRIMARY' , 'Etablir en tant qu\'adresse principale');
@@ -195,6 +144,15 @@ define('BOX_HEADING_MANUFACTURER_INFO', 'Infos Fabricant');
   define('PLEASE_SELECT', 'Veuillez choisir ...');
   define('TYPE_BELOW', 'Entrer un choix ci-dessous ...');
 
+  define('TEXT_CATEGORY', 'Cat&eacute;gorie: ');
+  define('TEXT_CONDITION', 'Condition: ');
+  define('TEXT_CONDITION_NEW', 'Nouveau');
+
+  define('TEXT_IN_STOCK', 'En Stock');
+  define('TEXT_OUT_OF_STOCK', 'Epuis&eacute;');
+  define('TEXT_INSTORE_ONLY', 'En Boutique Seulement');
+  define('TEXT_PREORDER', 'Pre-Commande');
+
   define('ENTRY_COMPANY', 'Soci&eacute;t&eacute; :');
   define('ENTRY_COMPANY_ERROR', 'Veuillez entrer le nom de votre soci&eacute;t&eacute;.');
   define('ENTRY_COMPANY_TEXT', '');
@@ -208,8 +166,7 @@ define('BOX_HEADING_MANUFACTURER_INFO', 'Infos Fabricant');
   define('ENTRY_LAST_NAME_ERROR', 'Votre nom doit comporter un minimum de ' . ENTRY_LAST_NAME_MIN_LENGTH . ' caract&egrave;res. Veuillez rectifier et r&eacute;essayer.');
   define('ENTRY_LAST_NAME_TEXT', '*');
   define('ENTRY_DATE_OF_BIRTH', 'Date de Naissance :');
-  define('ENTRY_DATE_OF_BIRTH_ERROR', 'Votre date de naissance doit &ecirc;tre au format suivant : jj/mm/aaaa (ex: 21/05/1970)');
-  define('ENTRY_DATE_OF_BIRTH_TEXT', '* (ex: 21/05/1970)');
+  define('ENTRY_DATE_OF_BIRTH_TEXT', '* ' . ENTRY_DATE_OF_BIRTH_EXAMPLE);
   define('ENTRY_EMAIL_ADDRESS', 'Adresse E-mail :');
   define('ENTRY_EMAIL_ADDRESS_ERROR', 'Votre adresse E-mail doit contenir un minimum de ' . ENTRY_EMAIL_ADDRESS_MIN_LENGTH . ' caract&egrave;res. Veuillez rectifier et r&eacute;essayer.');
   define('ENTRY_EMAIL_ADDRESS_CHECK_ERROR', 'Votre adresse E-mail ne semble pas valide. Veuillez corriger et r&eacute;essayer.');
@@ -228,7 +185,7 @@ define('BOX_HEADING_MANUFACTURER_INFO', 'Infos Fabricant');
   define('ENTRY_POST_CODE', 'Code Postal :');
   define('ENTRY_POST_CODE_ERROR', 'Votre Code Postal doit contenir un minimum de ' . ENTRY_POSTCODE_MIN_LENGTH . ' caract&egrave;res.');
   define('ENTRY_POST_CODE_TEXT', '*');
-    define('ENTRY_CITY', 'Ville :');
+  define('ENTRY_CITY', 'Ville :');
   define('ENTRY_CUSTOMERS_REFERRAL', 'Code de parrainage :');
 
   define('ENTRY_CITY_ERROR', 'Votre ville doit contenir un minimum de ' . ENTRY_CITY_MIN_LENGTH . ' caract&egrave;res.');
@@ -238,7 +195,7 @@ define('BOX_HEADING_MANUFACTURER_INFO', 'Infos Fabricant');
   define('ENTRY_STATE_ERROR_SELECT', 'Merci de renseigner le champ D&eacute;pt./Prov./Canton.');
   define('ENTRY_STATE_TEXT', '*');
   define('JS_STATE_SELECT', '-- Veuillez choisir --');
-define('ENTRY_COUNTRY', 'Pays :');
+  define('ENTRY_COUNTRY', 'Pays :');
   define('ENTRY_COUNTRY_ERROR', 'Vous devez s&eacute;lectionner un Pays dans la liste d&eacute;roulante.');
   define('ENTRY_COUNTRY_TEXT', '*');
   define('ENTRY_TELEPHONE_NUMBER', 'T&eacute;l&eacute;phone :');
@@ -272,7 +229,7 @@ define('ENTRY_COUNTRY', 'Pays :');
 
   // constants for use in zen_prev_next_display function
   define('TEXT_RESULT_PAGE', '');
-   define('TEXT_DISPLAY_NUMBER_OF_PRODUCTS', 'Affiche <b>%d</b> &agrave; <b>%d</b> (sur <b>%d</b> articles)');
+  define('TEXT_DISPLAY_NUMBER_OF_PRODUCTS', 'Affiche <b>%d</b> &agrave; <b>%d</b> (sur <b>%d</b> articles)');
   define('TEXT_DISPLAY_NUMBER_OF_ORDERS', 'Affiche <b>%d</b> &agrave; <b>%d</b> (sur <b>%d</b> commandes)');
   define('TEXT_DISPLAY_NUMBER_OF_REVIEWS', 'Affiche <b>%d</b> &agrave; <b>%d</b> (sur <b>%d</b> avis)');
   define('TEXT_DISPLAY_NUMBER_OF_PRODUCTS_NEW', 'Affiche <b>%d</b> &agrave; <b>%d</b> (sur <b>%d</b> nouveaut&eacute;s)');
@@ -291,10 +248,14 @@ define('ENTRY_COUNTRY', 'Pays :');
   define('PREVNEXT_BUTTON_PREV', '[&lt;&lt;&nbsp;Pr&eacute;c]');
   define('PREVNEXT_BUTTON_NEXT', '[Suiv&nbsp;&gt;&gt;]');
   define('PREVNEXT_BUTTON_LAST', 'DERNIER&gt;&gt;');
+  define('PREVNEXT_TEXT_BACK', 'Retour &agrave; la liste');
 
   define('TEXT_BASE_PRICE','A partir de : ');
+  define('TEXT_PRICE_HEADING','Prix:');
+  define('TEXT_DISCOUNTS_HEADING','Remises:');
 
   define('TEXT_CLICK_TO_ENLARGE', 'Agrandir l&rsquo;image');
+  define('TEXT_NO_IMAGE_AVAILABLE', 'Pas d&rsquo;image disponible');
 
   define('TEXT_SORT_PRODUCTS', 'Classer les Produits ');
   define('TEXT_DESCENDINGLY', 'Ordre Descendant');
@@ -316,8 +277,6 @@ define('ENTRY_COUNTRY', 'Pays :');
   define('WARNING_INSTALL_DIRECTORY_EXISTS', 'attention : le r&eacute;pertoire d\'installation existe &aacute;: %s. Merci de supprimer ce r&eacute;pertoire pour des raisons de s&eacute;curit&eacute;.');
   define('WARNING_CONFIG_FILE_WRITEABLE', 'attention : il est possible d\'&eacute;crire dans le fichier de configuration : %s. C\'est un risque potentiel de s&eacute;curit&eacute;- Indiquez les bonnes permissions sur ce fichier ! (Lecture seule, souvent avec un CHMOD 644 ou 444). Vous devrez peut-&ecirc;tre utiliser votre panneau/gestionnaire de fichiers ou FTP pour changer les permissions efficacement. Entrez en contact avec votre h&eacute;bergeur pour de l\'aide.');
   define('ERROR_FILE_NOT_REMOVEABLE', 'Erreur: Le fichier sp&eacute;cifi&eacute; n\'a pas pu &ecirc;tre supprim&eacute;. Cela est d&ucirc; &agrave; la configuration des permissions sur le serveur, vous pouvez essayer de le supprimer par FTP.');
-  define('WARNING_SESSION_DIRECTORY_NON_EXISTENT', 'attention : le r&eacute;pertoire de sessions n\'existe pas : ' . zen_session_save_path() . '. Les sessions ne fonctionneront pas tant que ce r&eacute;pertoire n\'aura pas &eacute;t&eacute; cr&eacute;&eacute;.');
-  define('WARNING_SESSION_DIRECTORY_NOT_WRITEABLE', 'attention : il est impossible d\'&eacute;crire dans le r&eacute;pertoire de sessions : ' . zen_session_save_path() . '. Celles-ci ne fonctionneront pas tant que les permissions n\'auront pas &eacute;t&eacute; corrig&eacute;es.');
   define('WARNING_SESSION_AUTO_START', 'attention : session.auto_start est actif - veuillez d&eacute;sactiver cette fonctionnalit&eacute; dans php.ini et red&eacute;marrer le serveur web.');
   define('WARNING_DOWNLOAD_DIRECTORY_NON_EXISTENT', 'attention : le r&eacute;pertoire de t&eacute;l&eacute;chargement n\'existe pas : ' . DIR_FS_DOWNLOAD . '. Le t&eacute;l&eacute;chargement des produits ne fonctionnera qu\'avec un r&eacute;pertoire valide.');
   define('WARNING_SQL_CACHE_DIRECTORY_NON_EXISTENT', 'attention : le r&eacute;pertoire de cache SQL est inexistant : ' . DIR_FS_SQL_CACHE . '. Le cache SQL ne peut fonctionner sans ce r&eacute;pertoire.');
@@ -330,7 +289,7 @@ define('ENTRY_COUNTRY', 'Pays :');
   define('TEXT_CCVAL_ERROR_UNKNOWN_CARD', 'Les 4 premiers chiffres que vous avez saisis (%s) ne sont pas corrects, ou nous n\'acceptons pas ce type de carte. Veuillez r&eacute;essayer ou utiliser une autre carte de cr&eacute;dit.');
 
   define('BOX_INFORMATION_DISCOUNT_COUPONS', 'Bons de r&eacute;duction');
- define('BOX_INFORMATION_GV', 'FAQ ' . TEXT_GV_NAMES);
+  define('BOX_INFORMATION_GV', 'FAQ ' . TEXT_GV_NAMES);
   define('VOUCHER_BALANCE', 'Balance ' . TEXT_GV_NAME);
   define('BOX_HEADING_GIFT_VOUCHER', 'Compte ' . TEXT_GV_NAME);
   define('GV_FAQ', 'FAQ ' . TEXT_GV_NAMES);
@@ -348,8 +307,8 @@ define('ENTRY_COUNTRY', 'Pays :');
   define('VOUCHER_REDEEMED',  TEXT_GV_NAME . ' Valid&eacute;');
   define('CART_COUPON', 'Coupon : ');
   define('CART_COUPON_INFO', 'En savoir plus');
-define('TEXT_SEND_OR_SPEND','Vous avez un solde disponible en ' . TEXT_GV_NAME . '. Vous pouvez le d&eacute;penser ou l\'envoyer &aacute; quelqu\'un. Pour l\'envoyer, cliquez sur le bouton ci-dessous.');
-define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: '); 
+  define('TEXT_SEND_OR_SPEND','Vous avez un solde disponible en ' . TEXT_GV_NAME . '. Vous pouvez le d&eacute;penser ou l\'envoyer &aacute; quelqu\'un. Pour l\'envoyer, cliquez sur le bouton ci-dessous.');
+  define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: '); 
   define('TEXT_AVAILABLE_BALANCE', 'Votre compte ' . TEXT_GV_NAME);
 
 // payment method is GV/Discount
@@ -360,7 +319,7 @@ define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: ');
 
   define('TEXT_INVALID_REDEEM_COUPON', 'Code de r&eacute;duction invalide');
   define('TEXT_INVALID_REDEEM_COUPON_MINIMUM', 'Vous devez d&eacute;penser au moins %s pour utiliser ce bon');
-   define('TEXT_INVALID_STARTDATE_COUPON', 'Ce coupon n\'est pas encore disponible');
+  define('TEXT_INVALID_STARTDATE_COUPON', 'Ce coupon n\'est pas encore disponible');
   define('TEXT_INVALID_FINISHDATE_COUPON', 'Ce coupon a expir&eacute;');
   define('EXT_INVALID_USES_COUPON', 'Ce coupon peut &ecirc;tre utilis&eacute; uniquement pour ');
   define('TIMES', ' fois.');
@@ -373,6 +332,7 @@ define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: ');
   define('TEXT_INVALID_COUPON_PRODUCT', 'Ce Coupon n\'est valable pour aucun des produits qui se trouvent actuellement dans votre panier.');
   define('TEXT_VALID_COUPON', 'F&eacute;licitations vous avez rachet&eacute; le bon de r&eacute;duction');
   define('TEXT_REMOVE_REDEEM_COUPON_ZONE', 'Le code de r&eacute;duction que vous avez entr&eacute; est invalide pour l\'adresse que vous avez choisie.');
+  define('TEXT_INVALID_COUPON_ORDER_LIMIT', 'Ce code de r&eacute;duction est invalide pour les clients qui ont plus de %s commande(s).');
 
 // more info in place of buy now
   define('MORE_INFO_TEXT','... Plus d\'information');
@@ -394,21 +354,13 @@ define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: ');
 // only for where multiple add to cart is used:
   define('SUCCESS_ADDED_TO_CART_PRODUCTS', 'Produit(s) choisi(s) ajout&eacute;(s) au panier avec succ&egrave;s ...');
 
-  define('TEXT_PRODUCT_WEIGHT_UNIT','Kgs');
-
-// Shipping
-  define('TEXT_SHIPPING_WEIGHT','Kgs');
-  define('TEXT_SHIPPING_BOXES', 'Boxes');
-
 // Discount Savings
   define('PRODUCT_PRICE_DISCOUNT_PREFIX','Economie :&nbsp;');
   define('PRODUCT_PRICE_DISCOUNT_PERCENTAGE','%');
   define('PRODUCT_PRICE_DISCOUNT_AMOUNT','&nbsp;de remise');
+
 // Sale Maker Sale Price
   define('PRODUCT_PRICE_SALE','Prix :&nbsp;');
-
-//universal symbols
-  define('TEXT_NUMBER_SYMBOL', '# ');
 
 // banner_box
   define('BOX_HEADING_BANNER_BOX','Partenaires');
@@ -419,7 +371,7 @@ define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: ');
   define('TEXT_BANNER_BOX2','A voir d&egrave;s aujourd\'hui !');
 
 // banner_box - all
-  define('BOX_HEADING_BANNER_BOX_ALL','Sponsors'); 
+  define('BOX_HEADING_BANNER_BOX_ALL','Sponsors');
   define('TEXT_BANNER_BOX_ALL','Veuillez visiter nos sponsors ...');
 
 // boxes defines
@@ -479,13 +431,13 @@ define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: ');
 
 // Downloads Controller
   define('DOWNLOADS_CONTROLLER_ON_HOLD_MSG','NOTE : les t&eacute;l&eacute;chargements ne sont pas disponibles tant que le paiement n\'a pas est valid&eacute;');
-  define('TEXT_FILESIZE_BYTES', ' octets');
-  define('TEXT_FILESIZE_MEGS', ' MO');
 
 // shopping cart errors
   define('ERROR_PRODUCT','Le produit: ');
   define('ERROR_PRODUCT_STATUS_SHOPPING_CART','<br />Nous sommes d&eacute;sol&eacute;s mais ce produit a &eacute;t&eacute; retir&eacute; de notre stock pour le moment.<br />Cet article a &eacute;t&eacute; enlev&eacute; de votre panier.');
-  define('ERROR_PRODUCT_QUANTITY_MIN',',  ... Erreurs de quantit&eacute; minimum - ');
+  define('ERROR_PRODUCT_ATTRIBUTES','<br />Le produit: ');
+  define('ERROR_PRODUCT_STATUS_SHOPPING_CART_ATTRIBUTES','<br />Nous sommes d&eacute;sol&eacute; mais les options s&eacute;lectionn&eacute;es ont chang&eacute;es pour ce produit et ont &eacute;t&eacute; supprim&eacute;es de notre catalogue.<br />Ce produit a &eacute;t&eacute; retir&eacute; de votre panier.');
+  define('ERROR_PRODUCT_QUANTITY_MIN',',  ... Erreurs de quantit&eacute; minimum - ');  
   define('ERROR_PRODUCT_QUANTITY_UNITS',' ... Erreurs des unit&eacute;s de quantit&eacute; - ');
   define('ERROR_PRODUCT_OPTION_SELECTION',' ... Options s&eacute;lectionn&eacute;es invalides ');
   define('ERROR_PRODUCT_QUANTITY_ORDERED','Vous avez command&eacute; pour un total de : ');
@@ -495,7 +447,8 @@ define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: ');
   define('ERROR_PRODUCT_QUANTITY_MAX_SHOPPING_CART',' ... Erreurs de quantit&eacute;s Maximum - ');
 
   define('WARNING_SHOPPING_CART_COMBINED', 'REMARQUE: Dans votre int&eacute;r&ecirc;t, votre panier courant a &eacute;t&eacute; combin&eacute; avec le panier de votre visite pr&eacute;c&eacute;dente. Pensez tout de m&ecirc;me &agrave; v&eacute;rifier votre panier avant de commander.');  
-  
+  define('WARNING_PRODUCT_QUANTITY_ADJUSTED', 'La quantit&eacute; a &eacute;t&eacute; ajust&eacute;e avec ce qui est en stock. ');  
+
 // error on checkout when $_SESSION['customers_id' does not exist in customers table
   define('ERROR_CUSTOMERS_ID_INVALID', 'L\'information de client ne peut pas &ecirc;tre valid&eacute;e !<br />Veuillez vous connecter ou recr&eacute;er votre compte ...');
 
@@ -567,9 +520,9 @@ define('TEXT_BALANCE_IS', 'Votre solde ' . TEXT_GV_NAME . ' est: ');
   
 // multiple product add to cart
   define('TEXT_PRODUCT_LISTING_MULTIPLE_ADD_TO_CART', 'Ajouter: ');
-define('TEXT_PRODUCT_ALL_LISTING_MULTIPLE_ADD_TO_CART', 'Ajouter: ');
+  define('TEXT_PRODUCT_ALL_LISTING_MULTIPLE_ADD_TO_CART', 'Ajouter: ');
   define('TEXT_PRODUCT_FEATURED_LISTING_MULTIPLE_ADD_TO_CART', 'Ajouter: ');
-define('TEXT_PRODUCT_NEW_LISTING_MULTIPLE_ADD_TO_CART', 'Ajouter: '); 
+  define('TEXT_PRODUCT_NEW_LISTING_MULTIPLE_ADD_TO_CART', 'Ajouter: '); 
   //moved SUBMIT_BUTTON_ADD_PRODUCTS_TO_CART to button_names.php as BUTTON_ADD_PRODUCTS_TO_CART_ALT
 
 // discount qty table
@@ -600,9 +553,6 @@ define('TEXT_PRODUCT_NEW_LISTING_MULTIPLE_ADD_TO_CART', 'Ajouter: ');
   define('TEXT_DOWNLOADS_UNLIMITED', 'Illimit&eacute;');
   define('TEXT_DOWNLOADS_UNLIMITED_COUNT', '--- *** ---');
 
-// misc
-  define('COLON_SPACER', ':&nbsp;&nbsp;');
-
 // table headings for cart display and upcoming products
   define('TABLE_HEADING_QUANTITY', 'Qt&eacute;.');
   define('TABLE_HEADING_PRODUCTS', 'Nom d\'article');
@@ -618,14 +568,20 @@ define('TEXT_PRODUCT_NEW_LISTING_MULTIPLE_ADD_TO_CART', 'Ajouter: ');
   define('TABLE_HEADING_LOGIN_DETAILS', 'D&eacute;tails de connection');
   define('TABLE_HEADING_REFERRAL_DETAILS', 'Comment nous avez-vous connu?');
 
+  define('ERROR_TEXT_COUNTRY_DISABLED_PLEASE_CHANGE', 'D&eacute;sol&eacute;, nous n\'acceptons plus les adresses de facturation ou livraison &agrave; "%s". Veuillez modifier cette adresse pour continuer.');
+
+  define('TEXT_CHECKOUT_LOGOFF_GUEST', 'NOTE: afin de terminer votre commande, un compte temporaire a &eacute;t&eacute; cr&eacute;&eacute;. Vous pouvez fermer ce compte en cliquant sur Se d&eacute;connecter. Se d&eacute;connecter vous assure aussi que vos informations de commande ne sont pas visibles pour la prochaine personne qui utiliserait cet ordinateur. Si vous souhaitez continuer vos achats, aucun probl&egrave; ! Vous pouvez vous d&eacute;connecter quand vous voulez en utilisant le lien en haut de la page.');
+  define('TEXT_CHECKOUT_LOGOFF_CUSTOMER', 'Merci pour vos achats. Veuillez cliquer sur le lien Se d&eacute;connecter pour vous assurer que vos informations de commande ne seront pas visibles pour la prochaine personne qui utiliserait cet ordinateur.');
+
   define('ENTRY_EMAIL_PREFERENCE','Pr&eacute;f&eacute;rences de newsletter et E-mail :');
   define('ENTRY_EMAIL_HTML_DISPLAY','HTML');
   define('ENTRY_EMAIL_TEXT_DISPLAY','TEXTE-Seulement');
   define('EMAIL_SEND_FAILED','ERREUR : Envoi d\'email impossible &agrave; : "%s" <%s> avec le sujet : "%s"');
 
   define('DB_ERROR_NOT_CONNECTED', 'Erreur - Connexion &aacute; la base de donn&eacute;es impossible');
+  define('ERROR_DATABASE_MAINTENANCE_NEEDED', '<a href="http://www.zen-cart.com/content.php?334-ERROR-0071-There-appears-to-be-a-problem-with-the-database-Maintenance-is-required" target="_blank">ERROR 0071: Il semble y avoir un probl&egrave;me avec la base de donn&eacute;es. Une maintenance est n&eacute;cessaire.</a>');
 
-// EZ-PAGES Alerts
+  // EZ-PAGES Alerts
   define('TEXT_EZPAGES_STATUS_HEADER_ADMIN', 'AVERTISSEMENT : EN-TETE d\'EZ-PAGES - actif pour l\'IP de l\'Admin seulement');
   define('TEXT_EZPAGES_STATUS_FOOTER_ADMIN', 'AVERTISSEMENT : PIED-DE-PAGE d\'EZ-PAGES - actif  pour l\'IP de l\'Admin seulement');
   define('TEXT_EZPAGES_STATUS_SIDEBOX_ADMIN', 'AVERTISSEMENT : SIDEBOX d\'EZ-PAGES  - actif  pour l\'IP de l\'Admin seulement');

@@ -10,11 +10,15 @@
  * Auteur : Damien Desrousseaux : http://www.zencart-france.com 
  * Package : zen-cart-v1.3.9-FR
  */
+if($_SESSION['COWOA']) $COWOA=TRUE;
 
   define('NAVBAR_TITLE_1', 'Commande - Etape 1');
   define('NAVBAR_TITLE_2', 'Mode de Paiement - Etape 2');
 
-  define('HEADING_TITLE', 'Etape 2 sur 3 - Information de Paiement');
+if($COWOA)
+define('HEADING_TITLE', 'Etape 3 sur 5 - Informations de paiement');
+else
+define('HEADING_TITLE', 'Etape 2 sur 3 - Informations de paiement');
 
   define('TABLE_HEADING_BILLING_ADDRESS', 'Adresse de Facturation');
   define('TEXT_SELECTED_BILLING_DESTINATION', 'Voici votre Adresse de facturation sur la gauche. Vous pouvez la modifier en cliquant sur le bouton <em>changer l\'adresse</em>.');
@@ -28,9 +32,13 @@
   
   define('TITLE_NO_PAYMENT_OPTIONS_AVAILABLE', 'Non disponible actuellement');
   define('TEXT_NO_PAYMENT_OPTIONS_AVAILABLE','<span class="alert">D&eacute;sol&eacute;s, nous n\'acceptons pas de paiements de votre pays actuellement.</span><br />Veuillez nous contacter pour des solutions alternatives.');
+  
+if($COWOA)
+define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Continuer vers l\'Etape 4</strong>');
+else
+define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Continuer vers l\'Etape 3</strong>');
 
-  define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Continuer vers l\'Etape 3</strong>');
-  define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- pour confirmer votre commande.');
+define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- pour confirmer votre commande.');
 
   define('TABLE_HEADING_CONDITIONS', '<span class="termsconditions">Conditions G&eacute;n&eacute;rales</span>');
   define('TEXT_CONDITIONS_DESCRIPTION', '<span class="termsdescription">En cochant la case suivante, vous d&eacute;clarez accepter nos Conditions G&eacute;n&eacute;rales qui s\'appliquent pour cette commande. Veuillez prendre connaissance de celles-ci <a href="' . zen_href_link(FILENAME_CONDITIONS, '', 'SSL') . '"><u>ici</u></a>.');
@@ -38,4 +46,3 @@
 
   define('TEXT_CHECKOUT_AMOUNT_DUE', 'Montant Total D&ucirc; : ');
   define('TEXT_YOUR_TOTAL','Votre total');
-?>
